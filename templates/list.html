@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Список задач
+{% endblock %}
+
+
+{% block body %}
+<style>
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.5); /* Прозрачный фон */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+<div class="container mt-5">
+    <h1>Список задач</h1><br>
+    {% for el in articles %}
+    <h3>{{ el.title }}</h3>
+    <b>Дата создания: {{ el.created_at.date() }}</b><br><br>
+    <div class="btn-group" style="width:580px;height:30px">
+        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('info', id=el.id) }}"
+                                                                          class="nav-link px-2"><b>Информации о
+            задаче</b></a></button>
+        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('update', id=el.id) }}"
+                                                                          class="nav-link px-2"><b>Обновление задачи</b></a>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('delete', id=el.id) }}"
+                                                                          class="nav-link px-2"><b>Удаление
+            задачи</b></a></button>
+    </div>
+    <br><br>
+    {% endfor %}
+</div>
+{% endblock %}

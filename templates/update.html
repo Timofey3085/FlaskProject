@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Обновление задачи
+{% endblock %}
+
+{% block body %}
+<h1>Обновление задачи</h1><br><br>
+<form action="{{ url_for('update', id=article.id) }}" method="post" class="form-inline">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="text" name="title" value="{{ article.title }}" required><br>
+    <textarea name="description">{{ article.description }}</textarea><br>
+
+    <div class="btn-group" style="width:400px;height:30px">
+        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('list') }}"
+                                                                          class="nav-link px-2"><b>К списку
+            задач</b></a></button>
+        <button type="submit" class="btn btn-sm btn-outline-secondary"><b>Обновить</b></button>
+    </div>
+</form>
+{% endblock %}

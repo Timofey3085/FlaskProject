@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Информация о задаче
+{% endblock %}
+
+
+{% block body %}
+<style>
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.5); /* Прозрачный фон */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+<h1>Информация о задаче</h1><br>
+<h2>{{ article.title }}</h2>
+<p>{{ article.description }}</p>
+<b>Дата создания: {{ article.created_at.date() }}</b><br>
+<b>Дата обновления: {{ article.updated_at.date() }}</b><br><br>
+<button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('list') }}" class="nav-link px-2"><b>К
+    списку задач</b></a></button>
+<button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('update', id=article.id) }}"
+                                                                  class="nav-link px-2"><b>Обновление задачи</b></a>
+</button>
+<button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('delete', id=article.id) }}"
+                                                                  class="nav-link px-2"><b>Удаление задачи</b></a>
+</button>
+{% endblock %}

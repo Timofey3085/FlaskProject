@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+Создание задачи
+{% endblock %}
+
+
+{% block body %}
+<style>
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.2); /* Прозрачный фон */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+<h1>Создание задачи</h1><br>
+<form action="." method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input id="title" name="title" class="form-control" placeholder="Введите текст задачи" size="30"><br>
+    <textarea id="description" name="description" class="form-control" placeholder="Введите описание задачи" rows="4"
+              cols="30"></textarea><br>
+    <div class="btn-group" style="width:300px;height:30px">
+        <button type="submit" class="btn btn-sm btn-outline-secondary"><b>Создать</b></button>
+    </div>
+</form>
+{% endblock %}
+
+

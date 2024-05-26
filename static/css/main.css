@@ -1,0 +1,48 @@
+body {
+    background-color: white;
+    background-image: url('../img/flask01.jpeg');
+    background-size: cover;
+    background-position: cover;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 400px;
+}
+
+label {
+    width: 10px;
+    margin-bottom: 10px;
+    text-align: auto;
+}
+
+input {
+    width: auto;
+    margin: 0px;
+}
+
+button {
+    width: 180px;
+    margin-bottom: 0px;
+}
+
+footer {
+    display: flex;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+.alert {
+    width: 400px; /* Устанавливаем ширину поля ошибки */
+    background-color: rgba(255, 0, 0, 0); /* Цвет фона ошибки */
+    color: black; /* Цвет текста ошибки */
+    padding: 10px; /* Отступы вокруг текста ошибки */
+}

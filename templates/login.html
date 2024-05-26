@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+
+{% block body %}
+<style>
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.2); /* Прозрачный фон */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+<h1>Вход</h1><br><br>
+{% for field, errors in form.errors.items() %}
+<div class="alert alert-danger">
+    <span style="color: red;">{{ ', '.join(errors) }}</span>
+</div>
+{% endfor %}
+<form action="/login" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    <label for="username">Имя пользователя:</label>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password"><br>
+    <button type="submit" class="btn btn-sm btn-outline-secondary"><b>Войти</b></button>
+</form>
+{% endblock %}

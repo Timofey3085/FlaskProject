@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Удаление задачи
+{% endblock %}
+
+{% block body %}
+<h1>Удаление задачи</h1><br>
+<h2>{{ article.title }}</h2>
+<p>{{ article.description }}</p><br>
+<form action="{{ url_for('delete', id=article.id) }}" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="confirm" value="confirm">
+    <div class="btn-group" style="width:400px;height:30px">
+        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('list') }}"
+                                                                          class="nav-link px-2"><b>К списку
+            задач</b></a></button>
+        <button type="submit" class="btn btn-sm btn-outline-secondary"><b>Удалить задачу</b></button>
+    </div>
+</form>
+{% endblock %}

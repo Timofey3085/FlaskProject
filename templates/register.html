@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block body %}
+<style>
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.5); /* Прозрачный фон */
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+<h1>Регистрация</h1><br><br>
+return "Пожалуйста, заполните все поля", 400
+<form action="/register" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password"><br>
+    <button type="submit" class="btn btn-sm btn-outline-secondary"><b>Зарегистрироваться</b></button>
+</form>
+{% endblock %}
