@@ -15,7 +15,7 @@
 - Ответ: список задач, где каждая задача представляет собой объект с полями id, title, description, created_at, updated_at.
 3. Получение информации о задаче:
 - Метод: GET
-- URL: /tasks/info/is
+- URL: /tasks/info/id
 - Ответ: объект с полями id, title, description, created_at, updated_at.
 4. Обновление задачи:
 - Метод: POST
@@ -48,6 +48,6 @@ pip install -r requirements.txt
 Пример запуска сервера разработки: python app.py
 ```
 
-##### Технологии: Python 3.11, Flask, HTML, CSS, SQLAlchemy, CSRFP
+##### Технологии: Python 3.11, Flask, HTML, CSS, SQLAlchemy, CSRF
 
 ##### Автор: [Timofey - Razborshchikov](https://github.com/Timofey3085)
