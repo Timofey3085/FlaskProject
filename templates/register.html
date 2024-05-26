@@ -13,7 +13,6 @@
     }
 </style>
 <h1>Регистрация</h1><br><br>
-return "Пожалуйста, заполните все поля", 400
 <form action="/register" method="post">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
     <label for="email">Email:</label>

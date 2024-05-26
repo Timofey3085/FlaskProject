@@ -195,9 +195,10 @@ def delete(id: int) -> Response | str:
             try:
                 db.session.delete(article)
                 db.session.commit()
+                flash('Задача успешно удалена', 'success')  # Добавляем сообщение об успешном удалении
                 return redirect('/tasks/list')
             except:
-                return "Произошла ошибка"
+                flash('Произошла ошибка', 'danger')  # Добавляем сообщение об ошибке
     return render_template('delete.html', article=article)
 
 
